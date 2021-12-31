@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<%- include('./partials/head',{title:"Iniciar Sesión"}) %>
+<!-- FIN-HEAD -->
+    
+<body class="container">
+    <main>
+        <!----- SECCION PRINCIPAL ----->
+        <section class="principal">
+            <section class="mensaje-login">
+                <p class="inicial1">¡Bienvenido al portal de Network Core!</p>
+                <p class="inicial2">Por favor, logueese para hacer uso de nuestros servicios.</p>
+            </section>
+            <form action="/login" method="POST" class="formulario">
+                <div class="estilo-formulario">
+                    <input type="text" id="username" name="username" placeholder="Username" class="estilo-input">
+                </div>
+                <div class="estilo-formulario">
+                    <input type="password"  id="password" name="password" placeholder="Password" class="estilo-input">
+                </div>
+                <div class="boton-formulario">
+                    <button type="submit" class="boton-formulario">ENVIAR</button>
+                </div>
+                <div class="msg-credenciales-incorrectas">
+                <% if (locals.loginError){%>
+                    <% if (loginError != undefined) { %>
+                    <p><%= loginError %></p>
+                    <% } %>
+                <% } %>
+                </div>
+            </form>
+        </section>
+        <!----- FIN-SECCION PRINCIPAL -----> 
+    </main> 
+    <!----- FOOTER ----->
+    <footer class="footer">
+        <section class="search">            
+        </section>
+        <img src="img/footer1.jfif" alt="Lo que haces se nota" class="loquehaces">
+    </footer>
+    <!----- FIN-FOOTER ----->    
+ 
+</body>
+</html>
